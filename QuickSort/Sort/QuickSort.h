@@ -10,6 +10,11 @@ void Sort(T* first, T* last, Compare comp) {
 		return;
 	}
 
+	if (size <= 20) {
+		InsertionSort(first, last, comp);
+		return;
+	}
+
 	T* pivot = Partition(first, last, RandPivot(first, last), comp);
 
 	Sort(first, pivot - 1, comp);

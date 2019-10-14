@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 #include <tuple>
 #include <algorithm>
+#include <chrono> 
 #include "../Sort/QuickSort.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -66,6 +67,8 @@ namespace Tests
 			std::tie(first, last, sortedFirst) = RandomArray(length);
 			InsertionSort(first, last, [](int a, int b) { return a < b; });
 			ArrayEquals(first, sortedFirst, length);
+			delete[] first;
+			delete[] sortedFirst;
 		}
 
 
@@ -78,6 +81,8 @@ namespace Tests
 			std::tie(first, last, sortedFirst) = RandomArray(length);
 			InsertionSort(first, last, [](int a, int b) { return a < b; });
 			ArrayEquals(first, sortedFirst, length);
+			delete[] first;
+			delete[] sortedFirst;
 		}
 
 
@@ -90,6 +95,8 @@ namespace Tests
 			std::tie(first, last, sortedFirst) = RandomArray(length);
 			InsertionSort(first, last, [](int a, int b) { return a < b; });
 			ArrayEquals(first, sortedFirst, length);
+			delete[] first;
+			delete[] sortedFirst;
 		}
 
 
@@ -109,6 +116,8 @@ namespace Tests
 			std::tie(first, last, sortedFirst) = RandomArray(length);
 			Sort(first, last, [](int a, int b) { return a < b; });
 			ArrayEquals(first, sortedFirst, length);
+			delete[] first;
+			delete[] sortedFirst;
 		}
 
 
@@ -121,6 +130,8 @@ namespace Tests
 			std::tie(first, last, sortedFirst) = RandomArray(length);
 			Sort(first, last, [](int a, int b) { return a < b; });
 			ArrayEquals(first, sortedFirst, length);
+			delete[] first;
+			delete[] sortedFirst;
 		}
 
 
@@ -133,6 +144,8 @@ namespace Tests
 			std::tie(first, last, sortedFirst) = RandomArray(length);
 			Sort(first, last, [](int a, int b) { return a < b; });
 			ArrayEquals(first, sortedFirst, length);
+			delete[] first;
+			delete[] sortedFirst;
 		}
 	};
 }
