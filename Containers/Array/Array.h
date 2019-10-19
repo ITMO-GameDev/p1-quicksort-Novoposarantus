@@ -131,6 +131,7 @@ namespace containers {
 		for (int i = index; i < realSize - 1; ++i) {
 			arr[i] = arr[i + 1];
 		}
+		//деструктор
 		publicSize--;
 	}
 	//end public
@@ -139,16 +140,19 @@ namespace containers {
 
 	template <typename T>
 	void DynamicArray<T>::increaseSize() {
+		T* oldArray = arr;
 		realSize = (int)(realSize * 1.6);
 		T* newArray = new T[realSize];
 		for (int i = 0; i < publicSize; ++i) {
 			newArray[i] = arr[i];
 		}
 		arr = newArray;
+		delete[] oldArray;
 	}
 
 	template <typename T>
 	void DynamicArray<T>::increaseSize(int index, const T& value) {
+		T* oldArray = arr;
 		publicSize++;
 		realSize = (int)(realSize * 1.6);
 		T* newArray = new T[realSize];
@@ -161,6 +165,7 @@ namespace containers {
 			newArray[i + supIndex] = arr[i];
 		}
 		arr = newArray;
+		delete[] oldArray;
 	}
 
 	//end private
