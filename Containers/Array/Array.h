@@ -131,7 +131,9 @@ namespace containers {
 		for (int i = index; i < realSize - 1; ++i) {
 			arr[i] = arr[i + 1];
 		}
-		//деструктор
+		if (std::is_destructible<T>::value) {
+			arr[realSize - 1].~T();
+		}
 		publicSize--;
 	}
 	//end public
