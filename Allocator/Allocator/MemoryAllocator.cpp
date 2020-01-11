@@ -2,24 +2,24 @@
 #include <windows.h>
 #include <cmath>
 
-int MemoryAllocator::align(int size)
+int lab4::MemoryAllocator::align(int size)
 {
     auto value = pow(2, ceil(log2(size)));
     return value >= 16 ? value : 16;
 }
 
-MemoryAllocator::MemoryAllocator()
+lab4::MemoryAllocator::MemoryAllocator()
 {
     isInit = false;
 
 }
 
-MemoryAllocator::~MemoryAllocator()
+lab4::MemoryAllocator::~MemoryAllocator()
 {
     this->MemoryAllocator::destroy();
 }
 
-void MemoryAllocator::init()
+void lab4::MemoryAllocator::init()
 {
     int start = 16;
 
@@ -37,7 +37,7 @@ void MemoryAllocator::init()
     isInit = true;
 }
 
-void* MemoryAllocator::alloc(int size)
+void* lab4::MemoryAllocator::alloc(int size)
 {
     if (!isInit) return nullptr;
     if (size > 10485760)
@@ -70,7 +70,7 @@ void* MemoryAllocator::alloc(int size)
     return  allocator->alloc();
 }
 
-void MemoryAllocator::free(void* ptr)
+void lab4::MemoryAllocator::free(void* ptr)
 {
     if (!isInit) return;
 
@@ -92,7 +92,7 @@ void MemoryAllocator::free(void* ptr)
     VirtualFree(ptr, 0, MEM_RELEASE);
 }
 
-void MemoryAllocator::destroy()
+void lab4::MemoryAllocator::destroy()
 {
     if (!isInit) return;
     for (auto it = FSAallocators.begin(); it != FSAallocators.end(); ++it)
@@ -109,7 +109,7 @@ void MemoryAllocator::destroy()
     isInit = false;
 }
 
-void MemoryAllocator::dumpBlocks()
+void lab4::MemoryAllocator::dumpBlocks()
 {
     if (!isInit) return;
     for (auto it = FSAallocators.begin(); it != FSAallocators.end(); ++it)
