@@ -146,21 +146,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="FixedSizeAllocator.h" />
-    <ClInclude Include="FreeListAllocator.h" />
-    <ClInclude Include="MemoryAllocator.h" />
-    <ClInclude Include="SinglyLinkedList.h" />
-    <ClInclude Include="StackLinkedList.h" />
-    <ClInclude Include="Utils.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="FixedSizeAllocator.cpp" />
-    <ClCompile Include="FreeListAllocator.cpp" />
-    <ClCompile Include="MemoryAllocator.cpp" />
-    <ClCompile Include="SinglyLinkedList.cpp" />
-    <ClCompile Include="StackLinkedList.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
